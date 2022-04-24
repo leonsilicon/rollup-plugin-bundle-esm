@@ -26,7 +26,7 @@ export default defineConfig({
 });
 ```
 
-If you want to force some packages to be bundled regardless if they're ESM or CommonJS, you can pass `forceBundle`:
+If you want to force some packages to be bundled regardless if they're ESM or CommonJS, you can use the `forceBundle` option:
 
 ```typescript
 import commonjs from '@rollup/plugin-commonjs';
