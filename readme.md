@@ -1,5 +1,7 @@
 # rollup-plugin-bundle-esm
 
+A Rollup plugin that only bundles your project's ESM-only dependencies and marks CommonJS-compatible ones as external.
+
 ## Installation
 
 ```shell
