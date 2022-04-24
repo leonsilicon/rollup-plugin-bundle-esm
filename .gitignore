@@ -131,4 +131,4 @@ tsconfig.tsbuildinfo
 dist/*
 !dist/.gitkeep
 
-temp
+**/temp
