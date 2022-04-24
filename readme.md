@@ -26,7 +26,38 @@ export default defineConfig({
 });
 ```
 
-If you want to
+If you want to force some packages to be bundled regardless if they're ESM or CommonJS, you can pass `forceBundle`:
+
+```typescript
+import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { defineConfig } from 'rollup';
+import bundleESM from 'rollup-plugin-bundle-esm';
+
+export default defineConfig({
+  output: {
+    format: 'commonjs',
+    dir: 'dist',
+  },
+  input: 'index.js',
+  plugins: [
+    commonjs(),
+    nodeResolve(),
+    bundleESM({
+      forceBundle: ['minimist', 'yargs'],
+    }),
+  ],
+});
+```
+
+## API
+
+### forceBundle
+
+Type: `(string | RegExp)[] | string | RegExp | ((source: string, importer: string | undefined, isResolved: boolean) => boolean | null | void);` (same signature as the `rollup.external` option)
+Required: `false`
+
+Force a package to be bundled regardless of its module format.
 
 ## Why?
 
