@@ -62,13 +62,13 @@ Required: `false`
 
 Force a package to be bundled regardless of its module format.
 
-### packageJsonPath
+### packageJson
 
 Type: `string`
 \
 Required: `false`
 
-The path of the project's `package.json` file.
+The path to the project's `package.json` file.
 
 ## Why?
 

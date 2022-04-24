@@ -2,7 +2,7 @@ import * as fs from 'node:fs';
 import type { PackageJson } from 'type-fest';
 
 export default function getProjectDependencies(
-	packageJsonPath,
+	packageJsonPath: string,
 	type: keyof PackageJson = 'dependencies'
 ): Record<string, string> {
 	try {
