@@ -1,18 +1,18 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@leonzalion/configs': latest
+  '@leonzalion/configs': ^1.2.27
   '@sindresorhus/is': ^4.6.0
-  '@types/node': latest
-  desm: latest
-  eslint-define-config: latest
-  execa: latest
+  '@types/node': ^17.0.25
+  desm: ^1.2.0
+  eslint-define-config: ^1.4.0
+  execa: ^6.1.0
   is-file-esm: ^1.0.0
-  lion-system: latest
+  lion-system: ^1.3.16
   rollup: ^2.70.2
   type-fest: ^2.12.2
-  typescript: latest
-  vitest: latest
+  typescript: ^4.6.3
+  vitest: ^0.9.4
 
 dependencies:
   '@sindresorhus/is': 4.6.0
