@@ -33,6 +33,7 @@ export function bundleESM(options?: BundleESMPluginOptions): Plugin {
 				}
 
 				const dependencies = getProjectDependencies();
+
 				if (!(source in dependencies)) {
 					return null;
 				}
