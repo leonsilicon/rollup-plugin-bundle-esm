@@ -1,6 +1,6 @@
 {
 	"name": "rollup-plugin-bundle-esm",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Bundle ESM-only packages with Rollup and leave CommonJS-compatible packages external.",
 	"license": "MIT",
 	"repository": {
