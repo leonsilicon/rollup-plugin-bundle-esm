@@ -1,10 +1,8 @@
 import * as fs from 'node:fs';
-import * as path from 'node:path';
-import process from 'node:process';
 import type { PackageJson } from 'type-fest';
 
 export default function getProjectDependencies(
-	packageJsonPath: string = path.join(process.cwd(), 'package.json'),
+	packageJsonPath,
 	type: keyof PackageJson = 'dependencies'
 ): Record<string, string> {
 	try {

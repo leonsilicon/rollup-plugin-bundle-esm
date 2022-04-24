@@ -57,9 +57,18 @@ export default defineConfig({
 ### forceBundle
 
 Type: `(string | RegExp)[] | string | RegExp | ((source: string, importer: string | undefined, isResolved: boolean) => boolean | null | void);` (same signature as the `rollup.external` option)
+\
 Required: `false`
 
 Force a package to be bundled regardless of its module format.
+
+### packageJsonPath
+
+Type: `string`
+\
+Required: `false`
+
+The path of the project's `package.json` file.
 
 ## Why?
 

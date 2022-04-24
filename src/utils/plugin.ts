@@ -2,6 +2,7 @@ import isFileEsm from 'is-file-esm';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import process from 'node:process';
+import { pkgUpSync } from 'pkg-up';
 import type { Plugin } from 'rollup';
 
 import type { BundleESMPluginOptions } from '~/types.js';
@@ -9,6 +10,11 @@ import getProjectDependencies from '~/utils/deps.js';
 import externalToFunction from '~/utils/external.js';
 
 export function bundleESM(options?: BundleESMPluginOptions): Plugin {
+	const packageJsonPath = options?.packageJson ?? pkgUpSync();
+	if (packageJsonPath === undefined) {
+		throw new Error('`package.json` file not found.');
+	}
+
 	return {
 		name: 'bundle-esm',
 		options(opts) {
@@ -32,7 +38,7 @@ export function bundleESM(options?: BundleESMPluginOptions): Plugin {
 					return false;
 				}
 
-				const dependencies = getProjectDependencies();
+				const dependencies = getProjectDependencies(packageJsonPath);
 
 				if (!(source in dependencies)) {
 					return null;
@@ -40,9 +46,7 @@ export function bundleESM(options?: BundleESMPluginOptions): Plugin {
 
 				try {
 					// If the package wasn't already external, check if the package is a CommonJS compatible package, and if so, also mark it as external
-					const __require = createRequire(
-						path.join(process.cwd(), 'package.json')
-					);
+					const __require = createRequire(packageJsonPath);
 					const entrypoint = __require.resolve(source);
 					const { esm: isEsm } = isFileEsm.sync(entrypoint);
 

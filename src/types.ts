@@ -5,6 +5,11 @@ export interface BundleESMPluginOptions {
 		Specify a custom matcher to match packages that should be bundled regardless of ESM or CommonJS format
 	*/
 	forceBundle?: RollupOptions['external'];
+
+	/**
+		Specify the path to the package.json file
+	*/
+	packageJson?: string;
 }
 
 export type RollupExternalFunction = (

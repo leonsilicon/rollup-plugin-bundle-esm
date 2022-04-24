@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@sindresorhus/is": "^4.6.0",
 		"is-file-esm": "^1.0.0",
+		"pkg-up": "^4.0.0",
 		"type-fest": "^2.12.2"
 	},
 	"publishConfig": {
