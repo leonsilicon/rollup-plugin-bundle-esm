@@ -1,10 +1,6 @@
 import type { RollupOptions } from 'rollup';
 
-type RollupExternalFunction = (
-	source: string,
-	importer: string | undefined,
-	isResolved: boolean
-) => boolean | null | void;
+import type { RollupExternalFunction } from '~/types.js';
 
 /**
 	Utility function mapping a Rollup config's `external` option into a function.
@@ -23,7 +19,8 @@ type RollupExternalFunction = (
 	@returns Function equivalent of the passed in `external`.
  */
 export default function externalToFunction(
-	external: RollupOptions['external']
+	external: RollupOptions['external'],
+	functionName = 'external'
 ): RollupExternalFunction {
 	if (typeof external === 'function') {
 		return external;
@@ -46,7 +43,7 @@ export default function externalToFunction(
 		return () => false;
 	} else {
 		throw new TypeError(
-			`rollup-plugin-peer-deps-external: 'external' option must be a function or an array.`
+			`rollup-plugin-bundle-esm: '${functionName}' option must be a function or an array.`
 		);
 	}
 }

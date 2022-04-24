@@ -30,4 +30,10 @@ test('correctly bundles esm modules', async () => {
 	expect(
 		fs.readFileSync(path.join(tempFixtureDir, 'dist/index.js'), 'utf8')
 	).to.include("require('qs')");
+	expect(
+		fs.readFileSync(path.join(tempFixtureDir, 'dist/index.js'), 'utf8')
+	).to.not.include("require('minimist')");
+	expect(
+		fs.readFileSync(path.join(tempFixtureDir, 'dist/index.js'), 'utf8')
+	).to.not.include("require('yargs')");
 });

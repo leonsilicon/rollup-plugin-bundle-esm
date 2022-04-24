@@ -6,8 +6,14 @@ import bundleESM from 'rollup-plugin-bundle-esm';
 export default defineConfig({
 	output: {
 		format: 'commonjs',
-		dir: 'dist'
+		dir: 'dist',
 	},
 	input: 'index.js',
-	plugins: [commonjs(), nodeResolve(), bundleESM()],
+	plugins: [
+		commonjs(),
+		nodeResolve(),
+		bundleESM({
+			forceBundle: ['minimist', 'yargs'],
+		}),
+	],
 });
