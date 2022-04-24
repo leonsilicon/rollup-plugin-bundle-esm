@@ -1,0 +1,13 @@
+{
+	"type": "module",
+	"dependencies": {
+		"chalk": "^5.0.1",
+		"qs": "^6.10.3"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^21.1.0",
+		"@rollup/plugin-node-resolve": "^13.2.1",
+		"rollup": "^2.70.2",
+		"rollup-plugin-bundle-esm": "link:../../../dist"
+	}
+}
