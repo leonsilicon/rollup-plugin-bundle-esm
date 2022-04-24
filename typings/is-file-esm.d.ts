@@ -1,11 +1,16 @@
 declare module 'is-file-esm' {
-	type Result = {
+	// Type definitions for is-file-esm 1.0
+	// Project: https://github.com/davidmarkclements/is-file-esm
+	// Definitions by: Leon Si <https://github.com/leonzalion>
+	// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+	interface Result {
 		esm: boolean;
-		type: string;
-		extType: string;
+		type?: 'module' | 'commonjs';
+		extType: 'c' | 'm' | 'j';
 		path: string;
 		pkgPath: string;
-	};
+	}
 
 	declare const isFileEsm: {
 		constants: {
