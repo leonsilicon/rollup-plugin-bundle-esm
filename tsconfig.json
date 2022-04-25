@@ -5,8 +5,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["./src/*"]
-		},
-		"types": ["node", "./typings/is-file-esm"]
+		}
 	},
 	"include": ["./src"]
 }
