@@ -33,6 +33,7 @@
 		"eslint-define-config": "^1.4.0",
 		"execa": "^6.1.0",
 		"lion-fixture": "^1.1.1",
+		"lionconfig": "^1.7.3",
 		"rollup": "^2.71.1",
 		"typescript": "^4.6.4",
 		"vitest": "^0.10.2"
